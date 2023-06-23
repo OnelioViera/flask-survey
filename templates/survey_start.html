@@ -3,22 +3,23 @@
 {% block body_tag_content %}
 
 <div class="survey_start_container">
-    <div class="row text-center justify-content-md-evenly">
-        <div class="col-md-6">
-<div class="card">
-    <div class="text-center">
-    <img src="https://www.zohowebstatic.com/sites/zweb/images/survey/templates/customer-satisfaction-icon.png" class="img-fluid w-25 mt-5" alt="Responsive image">
-</div>
-    <div class="card-body">
-        <h1>{{title}}</h1>
-        <p class="h5">{{instructions}}</p>
-        <form action="/set_responses_cookie" method="POST">
-            <button class="btn btn-outline-success m-4">Start Survey</button>
-        </form>
+    <div class="row text-center">
+        <div class="col d-flex justify-content-center">
+            <div class="card">
+                <div class="text-center">
+                    <img src="https://www.zohowebstatic.com/sites/zweb/images/survey/templates/customer-satisfaction-icon.png"
+                        class="img-fluid w-25 mt-5" alt="Responsive image">
+                </div>
+                <div class="card-body">
+                    <h1 class="display-6">{{title}}</h1>
+                    <p class="h5">{{instructions}}</p>
+                    <form action="/set_responses_cookie" method="POST">
+                        <button class="btn btn-outline-success m-4">Start Survey</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
-</div>
 </div>
 
 {% endblock %}

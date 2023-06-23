@@ -1,7 +1,40 @@
-{% extends 'survey_questions_base.html' %}
-{% block title_tag %}Question 1 Page{% endblock %}
-{% block question %}{{question}}{% endblock %}
-{% block radio_value1 %}Yes{% endblock %}
-{% block answer1 %}{{question_choice_one}}{% endblock %}
-{% block radio_value2 %}No{% endblock %}
-{% block answer2 %}{{question_choice_two}}{% endblock %}
+{% extends 'base.html' %}
+{% block head_tag_title %}Survey Question 1{% endblock %}
+{% block body_tag_content %}
+
+<div class="survey_start_container">
+    <div class="row text-center">
+        <div class="col d-flex justify-content-center">
+            <div class="card">
+                <div class="text-center">
+                    <img src="https://img.freepik.com/free-vector/people-shopping-healthy-products_23-2148524193.jpg"
+                        class="img-fluid w-25 mt-5" alt="Responsive image">
+                </div>
+                <div class="card-body">
+                    <h1 class="display-6">{% block question %}{{question}}{% endblock %}</h1>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                            value="{% block radio_value1 %}{% endblock %}" />
+                        <label class="form-check-label" for="inlineRadio1">{% block answer1
+                            %}{{question_choice_one}}{%
+                            endblock %}</label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                            value="{% block radio_value2 %}{% endblock %}" />
+                        <label class="form-check-label" for="inlineRadio2">{% block answer2
+                            %}{{question_choice_two}}{%
+                            endblock %}</label>
+                    </div>
+                    <form action="/answer" method="POST">
+                        <button class="btn btn-outline-success m-4">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

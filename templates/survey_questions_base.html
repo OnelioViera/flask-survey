@@ -1,31 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title_tag %}{% endblock %}</title>
     <link rel="stylesheet" href="/static/app.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css" integrity="sha512-Z1+R2OfJ0a9kp/21IZNhJ5YEOCVRQh/nYktwmhkPF0FoDQH0Ov2wOOwDrlylzJckX6wSJ5VivCURL+JFfLf/xA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css"
+        integrity="sha512-Z1+R2OfJ0a9kp/21IZNhJ5YEOCVRQh/nYktwmhkPF0FoDQH0Ov2wOOwDrlylzJckX6wSJ5VivCURL+JFfLf/xA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
     <div class="center">
         {% for category, msg in get_flashed_messages(with_categories=true) %}
-            <p class="{{category}}"">{{msg}}</p>
+        <p class="{{category}}"">{{msg}}</p>
         {% endfor %}
-        <form action="/answer" method="POST">
-            <h1>{% block question %}{% endblock %}</h1>
-            <div class="answers">
-                <input type="radio" id="choice1" name="question-choices" value="{% block radio_value1 %}{% endblock %}">
-                <label for="choice1">{% block answer1 %}{% endblock %}</label>
-            </div>
-    
-            <div class="answers">
-                <input type="radio" id="choice2" name="question-choices" value="{% block radio_value2 %}{% endblock %}">
-                <label for="choice2">{% block answer2 %}{% endblock %}</label>
-            </div>
-            <button>Submit</button>
+        <form action=" /answer" method="POST">
+        <h1>{% block question %}{% endblock %}</h1>
+        <div class="answers">
+            <input type="radio" id="choice1" name="question-choices" value="{% block radio_value1 %}{% endblock %}">
+            <label for="choice1">{% block answer1 %}{% endblock %}</label>
+        </div>
+
+        <div class="answers">
+            <input type="radio" id="choice2" name="question-choices" value="{% block radio_value2 %}{% endblock %}">
+            <label for="choice2">{% block answer2 %}{% endblock %}</label>
+        </div>
+        <button>Submit</button>
         </form>
     </div>
 </body>
+
 </html>
